@@ -3,295 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бассейны Под Ключ | AQUA_BUILD</title>
+    <title>БАСС | Полимерное производство</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; } /* Шрифт с засечками для заголовков под лого */
+        
         .hero-bg {
             background-image: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80');
             background-size: cover;
             background-position: center;
         }
-        /* Скроллбар для списка городов */
-        .city-list::-webkit-scrollbar {
-            width: 8px;
+        
+        /* Золотой градиент для кнопок */
+        .btn-gold {
+            background: linear-gradient(to right, #b48811, #eecf68, #b48811);
+            color: #000;
+            transition: all 0.3s ease;
+            background-size: 200% auto;
+        }
+        .btn-gold:hover {
+            background-position: right center;
         }
 
-        .city-list::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .city-list::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
+        /* Скроллбар */
+        .city-list::-webkit-scrollbar { width: 8px; }
+        .city-list::-webkit-scrollbar-track { background: #1f2937; }
+        .city-list::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+        
         /* Активная кнопка города */
         .city-item.active {
-            border-left-color: #2563eb;
-            background-color: #eff6ff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left-color: #eecf68; /* Золото */
+            background-color: #374151; /* Серый */
         }
-
-        /* Плавное раскрытие вопросов */
-        details > summary {
-            list-style: none;
-        }
-
-            details > summary::-webkit-details-marker {
-                display: none;
-            }
+        
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="text-gray-800 bg-gray-50">
-
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
+<body class="text-gray-200 bg-gray-900"> <nav class="bg-black shadow-lg fixed w-full z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-2">
                 <div class="flex items-center">
-                    <span class="font-bold text-xl text-blue-600 tracking-wider">AQUA_BUILD</span>
+                    <img src="4243.jpg" alt="БАСС Логотип" class="h-16 md:h-20 object-contain">
                 </div>
-                <div class="hidden md:flex space-x-6 text-sm font-medium">
-                    <a href="#production" class="hover:text-blue-600 transition">Производство</a>
-                    <a href="#models" class="hover:text-blue-600 transition">Каталог</a>
-                    <a href="#calculator" class="hover:text-blue-600 transition">Цены</a>
-                    <a href="#info" class="hover:text-blue-600 transition">Инфо</a>
-                    <a href="#contacts" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">Связаться</a>
+                <div class="hidden md:flex space-x-8 text-sm font-medium tracking-widest uppercase">
+                    <a href="#production" class="hover:text-yellow-500 transition text-gray-400">Производство</a>
+                    <a href="#models" class="hover:text-yellow-500 transition text-gray-400">Каталог</a>
+                    <a href="#calculator" class="hover:text-yellow-500 transition text-gray-400">Цены</a>
+                    <a href="#contacts" class="px-6 py-2 btn-gold font-bold rounded-sm">Связаться</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <header class="hero-bg h-screen flex items-center justify-center relative">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10 text-center text-white px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Бассейны<br>вашей мечты</h1>
-            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Полный цикл работ: от проектирования чаши до запуска оборудования. Гарантия качества по всей России.</p>
-            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#calculator" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full text-lg transition shadow-lg transform hover:scale-105">Рассчитать стоимость</a>
+        <div class="absolute inset-0 bg-black opacity-70"></div> <div class="relative z-10 text-center text-white px-4 mt-16">
+            <h1 class="text-5xl md:text-7xl mb-6 leading-tight tracking-wide text-yellow-500">БАСС</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light border-t border-b border-gray-600 py-4">
+                ПОЛИМЕРНОЕ ПРОИЗВОДСТВО
+            </p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#models" class="btn-gold py-4 px-12 text-lg font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.4)]">Выбрать бассейн</a>
             </div>
         </div>
     </header>
 
-    <section id="production" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-16 text-center">Этапы производства</h2>
+    <section id="production" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-16 text-center text-yellow-500">Этапы производства</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="font-bold text-lg mb-2">Проект</h3>
-                    <p class="text-sm text-gray-500">3D модель и чертежи.</p>
+                <div class="bg-gray-900 p-8 border border-gray-800 text-center hover:border-yellow-600 transition duration-500">
+                    <div class="text-5xl text-yellow-600 mb-6 font-serif">01</div>
+                    <h3 class="font-bold text-xl mb-2 text-white">Проект</h3>
+                    <p class="text-sm text-gray-500">Инженерный расчет нагрузок и 3D модель.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="font-bold text-lg mb-2">Формовка</h3>
-                    <p class="text-sm text-gray-500">8 слоев композита.</p>
+                <div class="bg-gray-900 p-8 border border-gray-800 text-center hover:border-yellow-600 transition duration-500">
+                    <div class="text-5xl text-yellow-600 mb-6 font-serif">02</div>
+                    <h3 class="font-bold text-xl mb-2 text-white">Формовка</h3>
+                    <p class="text-sm text-gray-500">Экструзионная сварка полипропилена.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="font-bold text-lg mb-2">Тест</h3>
-                    <p class="text-sm text-gray-500">Контроль герметичности.</p>
+                <div class="bg-gray-900 p-8 border border-gray-800 text-center hover:border-yellow-600 transition duration-500">
+                    <div class="text-5xl text-yellow-600 mb-6 font-serif">03</div>
+                    <h3 class="font-bold text-xl mb-2 text-white">Контроль</h3>
+                    <p class="text-sm text-gray-500">Двойная проверка швов на герметичность.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
-                    <h3 class="font-bold text-lg mb-2">Монтаж</h3>
-                    <p class="text-sm text-gray-500">Установка за 3 дня.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="models" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-4 text-center">Типовые модели</h2>
-            <p class="text-center text-gray-500 mb-12">Популярные формы, проверенные временем</p>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition text-center group bg-white">
-                    <div class="h-40 bg-blue-50 rounded-lg w-full mx-auto flex items-center justify-center mb-6 group-hover:bg-blue-100 transition">
-                        <div class="w-24 h-24 border-4 border-blue-500 rounded-full bg-white"></div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Серия «Rondo»</h3>
-                    <p class="text-gray-500 text-sm mb-4">Компактная круглая чаша. Идеально для купелей и дач.</p>
-                    <ul class="text-left text-sm text-gray-600 space-y-2 mb-6 bg-gray-50 p-4 rounded">
-                        <li>• Диаметр: от 2.5 м</li>
-                        <li>• Глубина: 1.5 м</li>
-                    </ul>
-                    <button class="w-full border-2 border-blue-600 text-blue-600 font-bold py-2 rounded hover:bg-blue-600 hover:text-white transition">Подробнее</button>
-                </div>
-
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition text-center group relative bg-white">
-                    <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">ХИТ</div>
-                    <div class="h-40 bg-blue-50 rounded-lg w-full mx-auto flex items-center justify-center mb-6 group-hover:bg-blue-100 transition">
-                        <div class="w-24 h-24 border-4 border-blue-500 bg-white"></div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Серия «Quadro»</h3>
-                    <p class="text-gray-500 text-sm mb-4">Современный стиль хай-тек. Удобная зона отдыха.</p>
-                    <ul class="text-left text-sm text-gray-600 space-y-2 mb-6 bg-gray-50 p-4 rounded">
-                        <li>• Размер: 3х3 м / 4х4 м</li>
-                        <li>• Встроенная лестница</li>
-                    </ul>
-                    <button class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 transition">Подробнее</button>
-                </div>
-
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition text-center group bg-white">
-                    <div class="h-40 bg-blue-50 rounded-lg w-full mx-auto flex items-center justify-center mb-6 group-hover:bg-blue-100 transition">
-                        <div class="w-32 h-20 border-4 border-blue-500 bg-white"></div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Серия «Classic»</h3>
-                    <p class="text-gray-500 text-sm mb-4">Классический бассейн для плавания всей семьи.</p>
-                    <ul class="text-left text-sm text-gray-600 space-y-2 mb-6 bg-gray-50 p-4 rounded">
-                        <li>• Длина: от 5 до 10 м</li>
-                        <li>• Переменная глубина</li>
-                    </ul>
-                    <button class="w-full border-2 border-blue-600 text-blue-600 font-bold py-2 rounded hover:bg-blue-600 hover:text-white transition">Подробнее</button>
+                <div class="bg-gray-900 p-8 border border-gray-800 text-center hover:border-yellow-600 transition duration-500">
+                    <div class="text-5xl text-yellow-600 mb-6 font-serif">04</div>
+                    <h3 class="font-bold text-xl mb-2 text-white">Логистика</h3>
+                    <p class="text-sm text-gray-500">Доставка спецтранспортом по РФ.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center">Выполненные проекты</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <img src="https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&q=80" alt="Бассейн" class="rounded-lg shadow-lg hover:scale-105 transition duration-500 h-64 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b0?auto=format&fit=crop&q=80" alt="Бассейн" class="rounded-lg shadow-lg hover:scale-105 transition duration-500 h-64 w-full object-cover">
-                <img src="https://images.unsplash.com/photo-1532509170321-72f3d61a2935?auto=format&fit=crop&q=80" alt="Бассейн" class="rounded-lg shadow-lg hover:scale-105 transition duration-500 h-64 w-full object-cover">
+    <section id="models" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-center text-white">Наши чаши</h2>
+            <p class="text-center text-gray-500 mb-16">Надежность, проверенная сибирским климатом</p>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                
+                <div class="bg-black border border-gray-800 group hover:border-yellow-600 transition">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="4149.jpg" alt="Круглый бассейн" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-yellow-600 text-black text-xs font-bold px-3 py-1 uppercase">В наличии</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-white mb-2">Серия «Rondo»</h3>
+                        <p class="text-gray-400 text-sm mb-6">Идеальная геометрия круга. Высокая прочность на разрыв.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-8">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>Материал: Полипропилен</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>Диаметр: до 5 метров</li>
+                        </ul>
+                        <button class="w-full border border-yellow-600 text-yellow-500 py-3 uppercase text-xs font-bold tracking-widest hover:bg-yellow-600 hover:text-black transition">Подробнее</button>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-gray-800 group hover:border-yellow-600 transition transform md:-translate-y-4">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="4150.jpg" alt="Прямоугольный бассейн" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                         <div class="absolute top-4 left-4 bg-white text-black text-xs font-bold px-3 py-1 uppercase">Хит продаж</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-white mb-2">Серия «Classic»</h3>
+                        <p class="text-gray-400 text-sm mb-6">Классическая форма для плавания. Готовая чаша под ключ.</p>
+                         <ul class="text-sm text-gray-500 space-y-2 mb-8">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>Размеры: от 3х2 до 15х6 м</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>Усиленные ребра жесткости</li>
+                        </ul>
+                        <button class="w-full btn-gold py-3 uppercase text-xs font-bold tracking-widest">Рассчитать стоимость</button>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-gray-800 group hover:border-yellow-600 transition">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="4152.jpg" alt="Доставка" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-white mb-2">Individual</h3>
+                        <p class="text-gray-400 text-sm mb-6">Проектирование и изготовление под сложный ландшафт.</p>
+                         <ul class="text-sm text-gray-500 space-y-2 mb-8">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>Любая форма и глубина</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>Своя логистика</li>
+                        </ul>
+                        <button class="w-full border border-yellow-600 text-yellow-500 py-3 uppercase text-xs font-bold tracking-widest hover:bg-yellow-600 hover:text-black transition">Заказать проект</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="calculator" class="py-20 bg-blue-900 text-white">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">Калькулятор стоимости</h2>
-            <div class="bg-white text-gray-800 rounded-xl p-8 shadow-2xl">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <section class="relative py-24 bg-black overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('4151.jpg')] bg-cover bg-fixed bg-center"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-white mb-6 font-serif">Монтаж «под ключ»</h2>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Мы не просто привозим чашу. Мы берем на себя весь цикл работ: от подготовки котлована до благоустройства территории плиткой и запуска оборудования.
+                </p>
+                <div class="flex space-x-8">
                     <div>
-                        <label class="block text-sm font-bold mb-2">Длина (м)</label>
-                        <input type="number" id="length" class="w-full p-3 border rounded" placeholder="5">
+                        <span class="block text-4xl text-yellow-500 font-bold">3</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest">Дня на монтаж</span>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2">Ширина (м)</label>
-                        <input type="number" id="width" class="w-full p-3 border rounded" placeholder="3">
+                        <span class="block text-4xl text-yellow-500 font-bold">25</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest">Лет гарантии</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-4 border-gray-800 transform rotate-2 hover:rotate-0 transition duration-500 shadow-2xl">
+                <img src="4151.jpg" alt="Монтаж" class="w-full">
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-24 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-white font-serif">Расчет стоимости</h2>
+            <div class="bg-black border border-gray-800 p-10 shadow-2xl relative">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Длина (м)</label>
+                        <input type="number" id="length" class="w-full bg-gray-900 border border-gray-700 text-white p-4 focus:outline-none focus:border-yellow-600 transition" placeholder="5">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Ширина (м)</label>
+                        <input type="number" id="width" class="w-full bg-gray-900 border border-gray-700 text-white p-4 focus:outline-none focus:border-yellow-600 transition" placeholder="3">
                     </div>
                     <div class="md:col-span-2">
-                        <label class="block text-sm font-bold mb-2">Тип чаши</label>
-                        <select id="type" class="w-full p-3 border rounded bg-white">
-                            <option value="15000">Полипропилен (Эконом)</option>
-                            <option value="28000">Композит (Стандарт)</option>
-                            <option value="45000">Бетон + Мозаика (Премиум)</option>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Класс оборудования</label>
+                        <select id="type" class="w-full bg-gray-900 border border-gray-700 text-white p-4 focus:outline-none focus:border-yellow-600 transition appearance-none">
+                            <option value="15000">Эконом (Полипропилен 5мм)</option>
+                            <option value="25000">Стандарт (Полипропилен 8мм)</option>
+                            <option value="40000">Премиум (Импортный лист + Усиление)</option>
                         </select>
                     </div>
                 </div>
-                <button onclick="calculate()" class="w-full bg-orange-500 text-white font-bold py-4 rounded hover:bg-orange-600 transition">Рассчитать</button>
-                <div id="result" class="mt-6 text-center text-2xl font-bold text-blue-900 hidden">0 руб.</div>
+                <button onclick="calculate()" class="w-full btn-gold py-4 font-bold uppercase tracking-widest text-sm">Рассчитать смету</button>
+                <div id="result" class="mt-8 text-center text-3xl font-serif text-yellow-500 hidden border-t border-gray-800 pt-6">
+                    0 руб.
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="info" class="py-20 bg-white">
+    <section id="info" class="py-24 bg-black">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid md:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">✓</span>
-                        Документация
-                    </h2>
-                    <p class="text-gray-600 mb-6 text-sm">Мы работаем прозрачно. Все материалы сертифицированы.</p>
+                     <h2 class="text-2xl font-bold mb-8 text-white font-serif border-l-4 border-yellow-600 pl-4">Справочник клиента</h2>
                     <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded shadow-sm flex items-center justify-between hover:bg-gray-100 cursor-pointer">
-                            <div class="flex items-center">
-                                <span class="text-2xl mr-4">📄</span>
-                                <div>
-                                    <h4 class="font-bold text-sm">Сертификат ГОСТ</h4>
-                                    <p class="text-xs text-gray-500">Композитные материалы</p>
-                                </div>
-                            </div>
-                            <span class="text-blue-600 text-sm font-bold">Скачать</span>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded shadow-sm flex items-center justify-between hover:bg-gray-100 cursor-pointer">
-                            <div class="flex items-center">
-                                <span class="text-2xl mr-4">🔬</span>
-                                <div>
-                                    <h4 class="font-bold text-sm">Гигиеническое заключение</h4>
-                                    <p class="text-xs text-gray-500">Безопасно для детей</p>
-                                </div>
-                            </div>
-                            <span class="text-blue-600 text-sm font-bold">Скачать</span>
-                        </div>
+                        <details class="bg-gray-900 border border-gray-800 p-4 group cursor-pointer">
+                            <summary class="font-bold text-gray-300 flex justify-between items-center group-hover:text-yellow-500 transition">
+                                Подготовка к зиме
+                                <span class="text-yellow-600">+</span>
+                            </summary>
+                            <p class="text-gray-500 text-sm mt-4 leading-relaxed pl-4 border-l border-yellow-600/30">
+                                Слив воды ниже форсунок, добавление консерванта, установка компенсаторов льда.
+                            </p>
+                        </details>
+                        <details class="bg-gray-900 border border-gray-800 p-4 group cursor-pointer">
+                            <summary class="font-bold text-gray-300 flex justify-between items-center group-hover:text-yellow-500 transition">
+                                Уход за водой
+                                <span class="text-yellow-600">+</span>
+                            </summary>
+                            <p class="text-gray-500 text-sm mt-4 leading-relaxed pl-4 border-l border-yellow-600/30">
+                                Используйте химию на основе активного кислорода для безопасности детей.
+                            </p>
+                        </details>
                     </div>
                 </div>
 
                 <div>
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">?</span>
-                        Полезная информация
-                    </h2>
+                    <h2 class="text-2xl font-bold mb-8 text-white font-serif border-l-4 border-yellow-600 pl-4">Документация</h2>
                     <div class="space-y-4">
-                        <details class="bg-gray-50 rounded shadow-sm p-4 group">
-                            <summary class="font-bold cursor-pointer flex justify-between items-center">
-                                Как подготовить бассейн к зиме?
-                                <span class="transition group-open:rotate-180 text-blue-600">▼</span>
-                            </summary>
-                            <p class="text-gray-600 text-sm mt-4 leading-relaxed">
-                                Необходимо слить воду до уровня форсунок, добавить консервирующую химию и установить компенсаторы (пластиковые бутылки).
-                            </p>
-                        </details>
-
-                        <details class="bg-gray-50 rounded shadow-sm p-4 group">
-                            <summary class="font-bold cursor-pointer flex justify-between items-center">
-                                Какую химию использовать?
-                                <span class="transition group-open:rotate-180 text-blue-600">▼</span>
-                            </summary>
-                            <p class="text-gray-600 text-sm mt-4 leading-relaxed">
-                                Мы рекомендуем средства на основе активного кислорода — они не пахнут хлоркой и безопасны для кожи.
-                            </p>
-                        </details>
+                        <div class="flex items-center justify-between p-4 border-b border-gray-800 hover:bg-gray-900 transition cursor-pointer group">
+                            <div class="flex items-center">
+                                <span class="text-yellow-600 text-2xl mr-4">📄</span>
+                                <div>
+                                    <h4 class="text-white text-sm font-bold group-hover:text-yellow-500">Сертификат ГОСТ Р</h4>
+                                    <p class="text-xs text-gray-600">Полимерные материалы</p>
+                                </div>
+                            </div>
+                            <span class="text-gray-500 text-xs uppercase tracking-widest group-hover:text-white">Скачать</span>
+                        </div>
+                         <div class="flex items-center justify-between p-4 border-b border-gray-800 hover:bg-gray-900 transition cursor-pointer group">
+                            <div class="flex items-center">
+                                <span class="text-yellow-600 text-2xl mr-4">🛡</span>
+                                <div>
+                                    <h4 class="text-white text-sm font-bold group-hover:text-yellow-500">Договор поставки</h4>
+                                    <p class="text-xs text-gray-600">Образец 2026</p>
+                                </div>
+                            </div>
+                            <span class="text-gray-500 text-xs uppercase tracking-widest group-hover:text-white">Скачать</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacts" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center">Работаем по всей России</h2>
+    <section class="py-12 bg-gray-900 border-t border-gray-800">
+         <div class="max-w-7xl mx-auto px-4">
+             <h2 class="text-center text-gray-500 text-sm uppercase tracking-widest mb-8">Фотоотчет с производства</h2>
+             <div class="grid grid-cols-2 md:grid-cols-6 gap-2 opacity-60 hover:opacity-100 transition duration-500">
+                 <img src="4144.jpg" class="h-32 w-full object-cover grayscale hover:grayscale-0 transition">
+                 <img src="4143.jpg" class="h-32 w-full object-cover grayscale hover:grayscale-0 transition">
+                 <img src="4148.jpg" class="h-32 w-full object-cover grayscale hover:grayscale-0 transition">
+                 <img src="4146.jpg" class="h-32 w-full object-cover grayscale hover:grayscale-0 transition">
+                 <img src="4145.jpg" class="h-32 w-full object-cover grayscale hover:grayscale-0 transition">
+                 <div class="bg-gray-800 h-32 flex items-center justify-center text-gray-500 text-xs cursor-pointer hover:bg-yellow-600 hover:text-black transition">
+                     <a href="https://t.me/SvetlanaPools">СМОТРЕТЬ<br>ВСЕ ФОТО</a>
+                 </div>
+             </div>
+         </div>
+    </section>
 
+    <section id="contacts" class="py-24 bg-white text-gray-800"> </section>
+    
+    <section id="contacts" class="py-24 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-white font-serif">Филиалы</h2>
+            
             <div class="grid md:grid-cols-3 gap-8 h-[500px]">
-
-                <div class="bg-white p-4 rounded-xl overflow-y-auto shadow-inner border border-gray-200 city-list">
-                    <h3 class="font-bold text-xl mb-4 text-gray-800 px-2">Наши офисы:</h3>
-
-                    <div class="space-y-3">
-                        <div onclick="showMap('moscow', this)" class="city-item active p-4 bg-white rounded-lg shadow-sm border-l-4 border-gray-300 cursor-pointer transition">
-                            <h4 class="font-bold text-lg">Москва</h4>
+                
+                <div class="bg-black p-4 border border-gray-800 city-list overflow-y-auto">
+                    <div class="space-y-2">
+                        <div onclick="showMap('moscow', this)" class="city-item active p-4 border-l-2 border-yellow-600 bg-gray-800 cursor-pointer transition">
+                            <h4 class="font-bold text-white">Москва</h4>
                             <p class="text-sm text-gray-500">ул. Строителей, 12</p>
                         </div>
-                        <div onclick="showMap('yaroslavl', this)" class="city-item p-4 bg-white rounded-lg shadow-sm border-l-4 border-gray-300 cursor-pointer transition">
-                            <h4 class="font-bold text-lg">Ярославль</h4>
+                        <div onclick="showMap('yaroslavl', this)" class="city-item p-4 border-l-2 border-transparent hover:bg-gray-800 cursor-pointer transition">
+                            <h4 class="font-bold text-white">Ярославль</h4>
                             <p class="text-sm text-gray-500">Московский проспект, 1</p>
                         </div>
-                        <div onclick="showMap('spb', this)" class="city-item p-4 bg-white rounded-lg shadow-sm border-l-4 border-gray-300 cursor-pointer transition">
-                            <h4 class="font-bold text-lg">Санкт-Петербург</h4>
+                        <div onclick="showMap('spb', this)" class="city-item p-4 border-l-2 border-transparent hover:bg-gray-800 cursor-pointer transition">
+                            <h4 class="font-bold text-white">Санкт-Петербург</h4>
                             <p class="text-sm text-gray-500">Лиговский пр., 50</p>
                         </div>
-                        <div onclick="showMap('kazan', this)" class="city-item p-4 bg-white rounded-lg shadow-sm border-l-4 border-gray-300 cursor-pointer transition">
-                            <h4 class="font-bold text-lg">Казань</h4>
+                        <div onclick="showMap('kazan', this)" class="city-item p-4 border-l-2 border-transparent hover:bg-gray-800 cursor-pointer transition">
+                            <h4 class="font-bold text-white">Казань</h4>
                             <p class="text-sm text-gray-500">ул. Баумана, 22</p>
                         </div>
-                        <div onclick="showMap('krasnodar', this)" class="city-item p-4 bg-white rounded-lg shadow-sm border-l-4 border-gray-300 cursor-pointer transition">
-                            <h4 class="font-bold text-lg">Краснодар</h4>
+                        <div onclick="showMap('krasnodar', this)" class="city-item p-4 border-l-2 border-transparent hover:bg-gray-800 cursor-pointer transition">
+                            <h4 class="font-bold text-white">Краснодар</h4>
                             <p class="text-sm text-gray-500">ул. Красная, 100</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="md:col-span-2 bg-gray-200 rounded-xl overflow-hidden relative shadow-lg border border-gray-300 h-full">
-                    <iframe id="map-moscow" class="map-frame w-full h-full" src="https://yandex.ru/map-widget/v1/?text=Москва+улица+Строителей+12&z=17" frameborder="0"></iframe>
+                <div class="md:col-span-2 bg-gray-800 relative overflow-hidden grayscale invert-[.1]"> <iframe id="map-moscow" class="map-frame w-full h-full" src="https://yandex.ru/map-widget/v1/?text=Москва+улица+Строителей+12&z=17" frameborder="0"></iframe>
                     <iframe id="map-yaroslavl" class="map-frame w-full h-full hidden" loading="lazy" src="https://yandex.ru/map-widget/v1/?text=Ярославль+Московский+проспект+1&z=16" frameborder="0"></iframe>
                     <iframe id="map-spb" class="map-frame w-full h-full hidden" loading="lazy" src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург+Лиговский+проспект+50&z=16" frameborder="0"></iframe>
                     <iframe id="map-kazan" class="map-frame w-full h-full hidden" loading="lazy" src="https://yandex.ru/map-widget/v1/?text=Казань+улица+Баумана+22&z=16" frameborder="0"></iframe>
@@ -301,39 +327,35 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-10 text-center">
-        <p class="text-sm">© 2026 AQUA_BUILD. Все права защищены</p>
+    <footer class="bg-black text-gray-600 py-10 text-center border-t border-gray-900 text-xs tracking-widest uppercase">
+        <p>&copy; 2026 БАСС. Полимерное производство.</p>
     </footer>
 
     <script>
-        // Калькулятор
         function calculate() {
             const l = document.getElementById('length').value;
             const w = document.getElementById('width').value;
             const p = document.getElementById('type').value;
             const r = document.getElementById('result');
-            if (l && w) {
-                r.innerText = "Итого: ~" + (l * w * p).toLocaleString() + " руб.";
+            if(l && w) {
+                r.innerText = "~ " + (l*w*p).toLocaleString() + " RUB";
                 r.classList.remove('hidden');
-            } else { alert("Введите размеры!"); }
+            } else { alert("Укажите размеры"); }
         }
 
-        // Карты
         function showMap(cityId, element) {
             document.querySelectorAll('.map-frame').forEach(el => el.classList.add('hidden'));
             document.getElementById('map-' + cityId).classList.remove('hidden');
             document.querySelectorAll('.city-item').forEach(el => {
                 el.classList.remove('active');
-                el.classList.remove('bg-blue-50');
-                el.classList.add('bg-white');
-                el.classList.remove('border-blue-600');
-                el.classList.add('border-gray-300');
+                el.classList.add('border-transparent');
+                el.classList.remove('bg-gray-800');
+                el.classList.remove('border-yellow-600');
             });
             element.classList.add('active');
-            element.classList.remove('bg-white');
-            element.classList.add('bg-blue-50');
-            element.classList.remove('border-gray-300');
-            element.classList.add('border-blue-600');
+            element.classList.remove('border-transparent');
+            element.classList.add('bg-gray-800');
+            element.classList.add('border-yellow-600');
         }
     </script>
 </body>

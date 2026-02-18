@@ -191,33 +191,70 @@
     <section id="calculator" class="py-20 bg-blue-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold mb-8 text-center">Калькулятор стоимости</h2>
+            <h2 class="text-3xl font-bold mb-4 text-center">Рассчитать стоимость бассейна</h2>
+            <p class="text-center text-blue-200 mb-8">Введите параметры, и мы подготовим детальную смету за 15 минут</p>
+
             <div class="bg-white text-gray-800 rounded-2xl p-8 shadow-2xl">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-sm font-bold mb-2 text-gray-600">Длина (м)</label>
-                        <input type="number" id="length" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="5">
+                        <input type="number" id="calc-length" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="5">
                     </div>
                     <div>
                         <label class="block text-sm font-bold mb-2 text-gray-600">Ширина (м)</label>
-                        <input type="number" id="width" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="3">
+                        <input type="number" id="calc-width" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="3">
                     </div>
                     <div class="md:col-span-2">
                         <label class="block text-sm font-bold mb-2 text-gray-600">Тип чаши</label>
-                        <select id="type" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
-                            <option value="15000">Эконом (Полипропилен 5мм)</option>
-                            <option value="25000">Стандарт (Полипропилен 8мм)</option>
-                            <option value="40000">Премиум (Импорт + Усиление)</option>
+                        <select id="calc-type" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="Эконом (5мм)">Эконом (Полипропилен 5мм)</option>
+                            <option value="Стандарт (8мм)">Стандарт (Полипропилен 8мм)</option>
+                            <option value="Премиум (Импорт)">Премиум (Импорт + Усиление)</option>
                         </select>
                     </div>
                 </div>
-                <button onclick="calculate()" class="w-full bg-orange-500 text-white font-bold py-4 rounded-lg hover:bg-orange-600 transition shadow-lg text-lg">Рассчитать стоимость</button>
-                <div id="result" class="mt-6 text-center text-2xl font-bold text-blue-900 hidden bg-blue-50 p-4 rounded-lg">
-                    0 руб.
-                </div>
+
+                <button onclick="openModal()" class="w-full bg-orange-500 text-white font-bold py-4 rounded-lg hover:bg-orange-600 transition shadow-lg text-lg uppercase tracking-wide">
+                    Запросить коммерческое предложение
+                </button>
+                <p class="text-center text-xs text-gray-400 mt-4">Это бесплатно и ни к чему вас не обязывает</p>
             </div>
         </div>
     </section>
+
+    <div id="orderModal" class="fixed inset-0 z-[60] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="closeModal()"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                Куда отправить расчет?
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500 mb-4">
+                                    Менеджер уже считает вашу смету. Оставьте контакты для связи.
+                                </p>
+                                <input type="text" id="client-name" class="w-full p-3 border rounded mb-3" placeholder="Ваше Имя">
+                                <input type="tel" id="client-phone" class="w-full p-3 border rounded mb-3" placeholder="+7 (999) 000-00-00">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" onclick="sendOrder()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">
+                        Отправить заявку
+                    </button>
+                    <button type="button" onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Отмена
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="info" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
@@ -345,17 +382,70 @@
     </footer>
 
     <script>
-        function calculate() {
-            const l = document.getElementById('length').value;
-            const w = document.getElementById('width').value;
-            const p = document.getElementById('type').value;
-            const r = document.getElementById('result');
-            if (l && w) {
-                r.innerText = "~ " + (l * w * p).toLocaleString() + " RUB";
-                r.classList.remove('hidden');
-            } else { alert("Укажите размеры"); }
+        // 1. УКАЖИ ТУТ EMAIL СВЕТЛАНЫ (куда придут заявки)
+        const TARGET_EMAIL = "redeleterd@gmail.com"; // <-- Замени на реальный!
+
+        function openModal() {
+            const l = document.getElementById('calc-length').value;
+            const w = document.getElementById('calc-width').value;
+            if (l && w) document.getElementById('orderModal').classList.remove('hidden');
+            else alert("Укажите размеры!");
         }
 
+        function closeModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+        }
+
+        // ТИХАЯ ОТПРАВКА
+        function sendOrder() {
+            const length = document.getElementById('calc-length').value;
+            const width = document.getElementById('calc-width').value;
+            const type = document.getElementById('calc-type').value;
+            const name = document.getElementById('client-name').value;
+            const phone = document.getElementById('client-phone').value;
+            const btn = document.querySelector('#orderModal button[onclick="sendOrder()"]');
+
+            if (!name || !phone) {
+                alert("Заполните имя и телефон!");
+                return;
+            }
+
+            // Визуально показываем "Загрузку"
+            const originalText = btn.innerText;
+            btn.innerText = "Отправка...";
+            btn.disabled = true;
+
+            // Формируем данные
+            const formData = new FormData();
+            formData.append("Размер", `${length} x ${width} м`);
+            formData.append("Тип", type);
+            formData.append("Имя клиента", name);
+            formData.append("Телефон", phone);
+            // Убираем капчу и страницу "Спасибо" (чтобы было скрыто)
+            formData.append("_captcha", "false");
+            formData.append("_template", "table");
+
+            // Отправляем на FormSubmit
+            fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // УСПЕХ!
+                    closeModal();
+                    alert("✅ Ваша заявка принята! Менеджер свяжется с вами в течение 15 минут.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                })
+                .catch(error => {
+                    alert("Ошибка отправки. Попробуйте еще раз или позвоните нам.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                });
+        }
+
+        // Карты
         function showMap(cityId, element) {
             document.querySelectorAll('.map-frame').forEach(el => el.classList.add('hidden'));
             document.getElementById('map-' + cityId).classList.remove('hidden');
